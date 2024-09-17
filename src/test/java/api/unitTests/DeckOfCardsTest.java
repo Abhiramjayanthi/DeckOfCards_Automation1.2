@@ -29,7 +29,22 @@ public class DeckOfCardsTest {
     }
     @Test
     public void testShuffleDeck(){
-        String.
-
+        deckOfCards.shuffleDeck();
+        assertTrue(DeckOfCards.response);
+    }
+    @Test
+    public void testAddToPile(){
+        List<String> cardsAddToPile = deckOfCards.drawCards(1);
+        String pileName = "Abhi";
+        deckOfCards.addToPile(cardsAddToPile,pileName);
+        assertNotNull(pileName);
+    }
+    @Test
+    public void testDisplayPileCards(){
+        List<String> drawCards = deckOfCards.drawCards(1);
+        String pileName = "Abhiram";
+        deckOfCards.addToPile(drawCards,pileName);
+        deckOfCards.displayPileCards(pileName);
+        assertNotNull(pileName);
     }
 }

@@ -4,13 +4,14 @@ import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.security.PublicKey;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
 public class DeckOfCards {
     private static final Logger log = LoggerFactory.getLogger(DeckOfCards.class);
-    private String response;
+    public static boolean response;
 
     public String getDeckId() {
         return deckId;
@@ -61,6 +62,8 @@ public class DeckOfCards {
                 .when()
                 .get(requestStorageContainer)
                 .then().log().body().extract().response().body().path("deck_id");
+
+
     }
 
     public void shuffleDeck() {
@@ -68,10 +71,6 @@ public class DeckOfCards {
                 .get(routes.getExistingShuffledDeckUrl(deckId))
                 .then().log().body().extract().response().body().path("shuffled");
         log.info("Deck shuffled.");
-        System.out.println(response);
-    }
-    public String getResponse() {
-        return response;
     }
 
     public List<String> drawCards(int count) {
