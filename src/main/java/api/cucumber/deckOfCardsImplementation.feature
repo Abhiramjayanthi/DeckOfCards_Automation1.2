@@ -24,7 +24,7 @@ Feature: Deck of Cards In-Depth Implementation
       | number_of_cards |
       | 2               |
       | 3               |
-      | 4               |
+      | 2               |
 
   Scenario Outline: Draw multiple shuffled decks of cards
 

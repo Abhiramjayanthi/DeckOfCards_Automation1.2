@@ -54,6 +54,7 @@ public class deckOfCardsStepDefinitions {
 
     @Then("I have remaining cards cards left")
     public void iHaveRemainingCardsCardsLeft() {
+
     }
 
     @Given("{int} new deck\\(s) of cards")
@@ -80,4 +81,8 @@ public class deckOfCardsStepDefinitions {
     public void iGetAnError() {
     }
 
+    @Given("an EXISTING_UK_CUSTOMER <deliveryOptions> NEW INTERNAL_ORS order for <productList> via V{int} API to DUNDEE address is SENT")
+    public void anEXISTING_UK_CUSTOMERDeliveryOptionsNEWINTERNAL_ORSOrderForProductListViaVAPIToDUNDEEAddressIsSENT(int arg0) {
+
+    }
 }

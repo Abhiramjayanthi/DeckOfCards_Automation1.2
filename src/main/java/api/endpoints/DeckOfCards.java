@@ -1,12 +1,11 @@
 package api.endpoints;
 
 import io.restassured.response.Response;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.security.PublicKey;
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 
 public class DeckOfCards {
@@ -62,8 +61,6 @@ public class DeckOfCards {
                 .when()
                 .get(requestStorageContainer)
                 .then().log().body().extract().response().body().path("deck_id");
-
-
     }
 
     public void shuffleDeck() {
@@ -72,6 +69,7 @@ public class DeckOfCards {
                 .then().log().body().extract().response().body().path("shuffled");
         log.info("Deck shuffled.");
     }
+
 
     public List<String> drawCards(int count) {
         Response response = given().when()
@@ -102,5 +100,4 @@ public class DeckOfCards {
                 .get(routes.getListPileCardsUrl(deckId, pileName))
                 .then().log().body();
     }
-
 }
